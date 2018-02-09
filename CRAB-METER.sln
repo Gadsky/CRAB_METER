@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRAB-METER", "CRAB_METER\CRAB-METER.csproj", "{6ABEDEA9-08CB-4DA3-8A1A-411FE6B673C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6ABEDEA9-08CB-4DA3-8A1A-411FE6B673C6}.Debug|x86.ActiveCfg = Debug|x86
+		{6ABEDEA9-08CB-4DA3-8A1A-411FE6B673C6}.Debug|x86.Build.0 = Debug|x86
+		{6ABEDEA9-08CB-4DA3-8A1A-411FE6B673C6}.Release|x86.ActiveCfg = Release|x86
+		{6ABEDEA9-08CB-4DA3-8A1A-411FE6B673C6}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FC4F8AB-99D9-4A67-B835-32A9E7D843E3}
+	EndGlobalSection
+EndGlobal
