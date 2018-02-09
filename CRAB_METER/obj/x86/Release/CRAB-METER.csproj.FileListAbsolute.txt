@@ -1,9 +1,0 @@
-D:\Work\CRAB-METER\CRAB_METER\bin\Release\CRAB_METER.exe
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\ELO.MainForm.resources
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\CRAB_METER.Properties.Resources.resources
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\ELO.StatsControl.resources
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\CRAB-METER.csproj.GenerateResource.Cache
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\CRAB-METER.csproj.CoreCompileInputs.cache
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\CRAB_METER.exe
-D:\Work\CRAB-METER\CRAB_METER\obj\x86\Release\CRAB_METER.pdb
-D:\Work\CRAB-METER\CRAB_METER\bin\Release\CRAB_METER.pdb
