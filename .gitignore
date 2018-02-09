@@ -1,0 +1,6 @@
+.vs/*
+CRAB_METER/bin/Debug/*
+CRAB_METER/bin/Release/*
+!CRAB_METER/bin/Release/CRAB_METER.exe
+CRAB_METER/obj/*
+
