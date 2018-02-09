@@ -52,11 +52,11 @@ namespace ELO {
             styleCBBounty.SelectedIndex = 6;
         }
 
-        private void timer_Tick(object sender, System.EventArgs e) {
+        private void OnTimerTick(object sender, System.EventArgs e) {
             if (character == null) return;
 
-            this.vetricalLabel1.NewText = character.Name;
-            horizontalL.Text = character.Name;
+            verticalTagL.NewText = character.Name;
+            horizontalTagL.Text = character.Name;
 
             EVECharacter.IntervalType type = EVECharacter.IntervalType._10sec;
             if (styleCBFrom.SelectedItem.ToString().Equals(_10_sec)) type = EVECharacter.IntervalType._10sec;
@@ -100,7 +100,7 @@ namespace ELO {
             bountyTotalTB.Text = statsBounty.Total.ToString("N0");
             bountyTimeTB.Text = Seconds2String((int)statsBounty.IntervalLength);
 
-            vetricalLabel1.Refresh();
+            verticalTagL.Refresh();
         }
 
         string Seconds2String(int seconds) {
@@ -111,20 +111,16 @@ namespace ELO {
             return
                 (h == 0 ? "" : h.ToString() + ":") +
                 (h == 0 && m == 0 ? "" : (h == 0 ? m.ToString() : m.ToString("D2")) + ":") +
-                (m == 0 && h == 0 ? s.ToString() : s.ToString("D2"));
+                (h == 0 && m == 0 ? s.ToString() : s.ToString("D2"));
         }
 
-        private void StatsControl_Load(object sender, System.EventArgs e) {
-
-        }
-
-        private void vetricalLabel1_Click(object sender, System.EventArgs e) {
-            for (var i = 0; i < this.Controls.Count; i++) {
+        private void OnTagClick(object sender, System.EventArgs e) {
+            for (var i = 0; i < Controls.Count; i++) {
                 Controls[i].Visible = !Controls[i].Visible;
             }
         }
 
-        private void label1_Click(object sender, System.EventArgs e) {
+        private void OnResetActionClick(object sender, System.EventArgs e) {
             character.SimulateUndocking();
         }
     }

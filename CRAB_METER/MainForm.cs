@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace ELO {
@@ -21,8 +17,6 @@ namespace ELO {
         public MainForm() {
             InitializeComponent();
         }
-
-
 
         private void OnCloseLClick(object sender, EventArgs e) {
             Close();

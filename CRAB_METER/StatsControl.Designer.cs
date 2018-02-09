@@ -38,10 +38,10 @@
             this.fromDPSTB = new System.Windows.Forms.TextBox();
             this.toDPSTB = new System.Windows.Forms.TextBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.horizontalL = new System.Windows.Forms.Label();
+            this.horizontalTagL = new System.Windows.Forms.Label();
             this.toDPSTime2TB = new System.Windows.Forms.TextBox();
             this.fromDPS2TB = new System.Windows.Forms.TextBox();
-            this.vetricalLabel1 = new ELO.VetricalLabel();
+            this.verticalTagL = new ELO.VerticalLabel();
             this.SuspendLayout();
             // 
             // bountyTimeTB
@@ -110,7 +110,7 @@
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 26;
             this.label1.Text = "R";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.OnResetActionClick);
             // 
             // fromDPSTimeTB
             // 
@@ -226,20 +226,20 @@
             // 
             this.timer.Enabled = true;
             this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.timer.Tick += new System.EventHandler(this.OnTimerTick);
             // 
             // horizontalL
             // 
-            this.horizontalL.AutoSize = true;
-            this.horizontalL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.horizontalL.ForeColor = System.Drawing.Color.White;
-            this.horizontalL.Location = new System.Drawing.Point(3, 3);
-            this.horizontalL.Name = "horizontalL";
-            this.horizontalL.Size = new System.Drawing.Size(28, 16);
-            this.horizontalL.TabIndex = 31;
-            this.horizontalL.Text = "????";
-            this.horizontalL.Visible = false;
-            this.horizontalL.Click += new System.EventHandler(this.vetricalLabel1_Click);
+            this.horizontalTagL.AutoSize = true;
+            this.horizontalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.horizontalTagL.ForeColor = System.Drawing.Color.White;
+            this.horizontalTagL.Location = new System.Drawing.Point(3, 3);
+            this.horizontalTagL.Name = "horizontalL";
+            this.horizontalTagL.Size = new System.Drawing.Size(28, 16);
+            this.horizontalTagL.TabIndex = 31;
+            this.horizontalTagL.Text = "????";
+            this.horizontalTagL.Visible = false;
+            this.horizontalTagL.Click += new System.EventHandler(this.OnTagClick);
             // 
             // toDPSTime2TB
             // 
@@ -273,16 +273,16 @@
             // 
             // vetricalLabel1
             // 
-            this.vetricalLabel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.vetricalLabel1.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.vetricalLabel1.ForeColor = System.Drawing.Color.White;
-            this.vetricalLabel1.Location = new System.Drawing.Point(0, 0);
-            this.vetricalLabel1.Name = "vetricalLabel1";
-            this.vetricalLabel1.NewText = "????";
-            this.vetricalLabel1.RotateAngle = -90;
-            this.vetricalLabel1.Size = new System.Drawing.Size(18, 72);
-            this.vetricalLabel1.TabIndex = 0;
-            this.vetricalLabel1.Click += new System.EventHandler(this.vetricalLabel1_Click);
+            this.verticalTagL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.verticalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.verticalTagL.ForeColor = System.Drawing.Color.White;
+            this.verticalTagL.Location = new System.Drawing.Point(0, 0);
+            this.verticalTagL.Name = "vetricalLabel1";
+            this.verticalTagL.NewText = "????";
+            this.verticalTagL.RotateAngle = -90;
+            this.verticalTagL.Size = new System.Drawing.Size(18, 72);
+            this.verticalTagL.TabIndex = 0;
+            this.verticalTagL.Click += new System.EventHandler(this.OnTagClick);
             // 
             // StatsControl
             // 
@@ -292,7 +292,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Controls.Add(this.fromDPS2TB);
             this.Controls.Add(this.toDPSTime2TB);
-            this.Controls.Add(this.horizontalL);
+            this.Controls.Add(this.horizontalTagL);
             this.Controls.Add(this.bountyTimeTB);
             this.Controls.Add(this.bountyTotalTB);
             this.Controls.Add(this.styleCBBounty);
@@ -306,11 +306,10 @@
             this.Controls.Add(this.styleCBFrom);
             this.Controls.Add(this.fromDPSTB);
             this.Controls.Add(this.toDPSTB);
-            this.Controls.Add(this.vetricalLabel1);
+            this.Controls.Add(this.verticalTagL);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StatsControl";
             this.Size = new System.Drawing.Size(323, 72);
-            this.Load += new System.EventHandler(this.StatsControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -332,8 +331,8 @@
         private System.Windows.Forms.TextBox fromDPSTB;
         private System.Windows.Forms.TextBox toDPSTB;
         private System.Windows.Forms.Timer timer;
-        private VetricalLabel vetricalLabel1;
-        private System.Windows.Forms.Label horizontalL;
+        private VerticalLabel verticalTagL;
+        private System.Windows.Forms.Label horizontalTagL;
         private System.Windows.Forms.TextBox toDPSTime2TB;
         private System.Windows.Forms.TextBox fromDPS2TB;
     }

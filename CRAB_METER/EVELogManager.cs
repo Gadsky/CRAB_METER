@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.RegularExpressions;
-using System.ComponentModel;
 using System.Windows.Forms;
 
 public class EVELogManager {
@@ -27,7 +25,6 @@ public class EVELogManager {
     public EVELogManager() {
         fileSystemWatcher = new FileSystemWatcher();
         fileSystemWatcher.Path = GetBasePath();
-        //fileSystemWatcher.Created += FSWOnCreated;
         fileSystemWatcher.Changed += FSWOnChanged;
         fileSystemWatcher.EnableRaisingEvents = true;
     }
@@ -49,19 +46,6 @@ public class EVELogManager {
         }
 
         return null;
-    }
-
-    private void FSWOnCreated(object sender, FileSystemEventArgs e) {
-        if (!files.ContainsKey(e.FullPath)) {
-            var tag = PreReadFile(e.FullPath);
-            if (tag == null) return;
-
-            var fileEntry = new FileEntry { Path = e.FullPath, Tag = tag, Offset = 0 };
-            files.Add(e.FullPath, fileEntry);
-        }
-
-        var fileToRead = files[e.FullPath];
-        ReadFile(fileToRead);
     }
 
     private void FSWOnChanged(object sender, FileSystemEventArgs e) {
@@ -287,12 +271,12 @@ public class EVECharacter {
         }
 
         if (intervalType == IntervalType._activeSinceUndock) {
-            var lastUndock = startTimeStamp;
-            if (actionBreaker.Count > 0) lastUndock = actionBreaker[actionBreaker.Count - 1].timestamp;
+            var lastActionBreak = startTimeStamp;
+            if (actionBreaker.Count > 0) lastActionBreak = actionBreaker[actionBreaker.Count - 1].timestamp;
 
-            to = lastUndock;
+            to = lastActionBreak;
             for (int i = hitsFrom.Count - 1; i >= 0; i--) {
-                if (hitsFrom[i].timestamp < lastUndock) break;
+                if (hitsFrom[i].timestamp < lastActionBreak) break;
                 from = Min(from, hitsFrom[i].timestamp);
                 to = Max(to, hitsFrom[i].timestamp);
             }
@@ -399,12 +383,12 @@ public class EVECharacter {
         }
 
         if (intervalType == IntervalType._activeSinceUndock) {
-            var lastUndock = startTimeStamp;
-            if (actionBreaker.Count > 0) lastUndock = actionBreaker[actionBreaker.Count - 1].timestamp;
+            var lastActionBreak = startTimeStamp;
+            if (actionBreaker.Count > 0) lastActionBreak = actionBreaker[actionBreaker.Count - 1].timestamp;
 
-            to = lastUndock;
+            to = lastActionBreak;
             for (int i = bounties.Count - 1; i >= 0; i--) {
-                if (bounties[i].timestamp < lastUndock) break;
+                if (bounties[i].timestamp < lastActionBreak) break;
                 from = Min(from, bounties[i].timestamp);
                 to = Max(to, bounties[i].timestamp);
             }
