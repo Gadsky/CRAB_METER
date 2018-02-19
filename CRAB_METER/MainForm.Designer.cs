@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.label3 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -72,9 +73,10 @@
             // 
             this.statsControl3.AutoSize = true;
             this.statsControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.statsControl3.Location = new System.Drawing.Point(3, 3);
+            this.statsControl3.Location = new System.Drawing.Point(0, 0);
+            this.statsControl3.Margin = new System.Windows.Forms.Padding(0);
             this.statsControl3.Name = "statsControl3";
-            this.statsControl3.Size = new System.Drawing.Size(341, 72);
+            this.statsControl3.Size = new System.Drawing.Size(323, 72);
             this.statsControl3.TabIndex = 2;
             // 
             // MainForm
@@ -90,9 +92,10 @@
             this.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Opacity = 0.7D;
-            this.Text = "ELO";
+            this.Text = "CR-M";
             this.TopMost = true;
             this.TransparencyKey = System.Drawing.Color.Black;
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnFormMouseDown);
