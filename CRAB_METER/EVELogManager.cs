@@ -101,6 +101,7 @@ public class EVECharacter {
     private struct HitTo {
         public DateTime timestamp;
         public int qty;
+        public string weapon;
     }
 
     private struct Bounty {
@@ -218,7 +219,7 @@ public class EVECharacter {
 
     private void OnTo(string timestamp, string qty, string weapon, string kind) {
         FixTimes(timestamp);
-        hitsTo.Add(new HitTo() { timestamp = lastTimeStamp, qty = int.Parse(qty) });
+        hitsTo.Add(new HitTo() { timestamp = lastTimeStamp, qty = int.Parse(qty), weapon = weapon });
     }
 
     private void OnUndocking(string timestamp) {

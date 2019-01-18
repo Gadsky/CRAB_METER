@@ -228,13 +228,13 @@
             this.timer.Interval = 1000;
             this.timer.Tick += new System.EventHandler(this.OnTimerTick);
             // 
-            // horizontalL
+            // horizontalTagL
             // 
             this.horizontalTagL.AutoSize = true;
             this.horizontalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.horizontalTagL.ForeColor = System.Drawing.Color.White;
             this.horizontalTagL.Location = new System.Drawing.Point(3, 3);
-            this.horizontalTagL.Name = "horizontalL";
+            this.horizontalTagL.Name = "horizontalTagL";
             this.horizontalTagL.Size = new System.Drawing.Size(28, 16);
             this.horizontalTagL.TabIndex = 31;
             this.horizontalTagL.Text = "????";
@@ -271,13 +271,13 @@
             this.fromDPS2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.fromDPS2TB.Visible = false;
             // 
-            // vetricalLabel1
+            // verticalTagL
             // 
             this.verticalTagL.Dock = System.Windows.Forms.DockStyle.Left;
             this.verticalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.verticalTagL.ForeColor = System.Drawing.Color.White;
             this.verticalTagL.Location = new System.Drawing.Point(0, 0);
-            this.verticalTagL.Name = "vetricalLabel1";
+            this.verticalTagL.Name = "verticalTagL";
             this.verticalTagL.NewText = "????";
             this.verticalTagL.RotateAngle = -90;
             this.verticalTagL.Size = new System.Drawing.Size(18, 72);
@@ -290,8 +290,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.fromDPS2TB);
-            this.Controls.Add(this.toDPSTime2TB);
             this.Controls.Add(this.horizontalTagL);
             this.Controls.Add(this.bountyTimeTB);
             this.Controls.Add(this.bountyTotalTB);
@@ -307,6 +305,8 @@
             this.Controls.Add(this.fromDPSTB);
             this.Controls.Add(this.toDPSTB);
             this.Controls.Add(this.verticalTagL);
+            this.Controls.Add(this.toDPSTime2TB);
+            this.Controls.Add(this.fromDPS2TB);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StatsControl";
             this.Size = new System.Drawing.Size(323, 72);
