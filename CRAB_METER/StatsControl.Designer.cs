@@ -42,6 +42,7 @@
             this.toDPSTime2TB = new System.Windows.Forms.TextBox();
             this.fromDPS2TB = new System.Windows.Forms.TextBox();
             this.verticalTagL = new ELO.VerticalLabel();
+            this.toDPSWeaponTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bountyTimeTB
@@ -50,7 +51,7 @@
             this.bountyTimeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyTimeTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyTimeTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyTimeTB.Location = new System.Drawing.Point(118, 48);
+            this.bountyTimeTB.Location = new System.Drawing.Point(118, 100);
             this.bountyTimeTB.Name = "bountyTimeTB";
             this.bountyTimeTB.ReadOnly = true;
             this.bountyTimeTB.Size = new System.Drawing.Size(64, 20);
@@ -64,7 +65,7 @@
             this.bountyTotalTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyTotalTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyTotalTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyTotalTB.Location = new System.Drawing.Point(17, 48);
+            this.bountyTotalTB.Location = new System.Drawing.Point(17, 100);
             this.bountyTotalTB.Name = "bountyTotalTB";
             this.bountyTotalTB.ReadOnly = true;
             this.bountyTotalTB.Size = new System.Drawing.Size(99, 20);
@@ -80,7 +81,7 @@
             this.styleCBBounty.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.styleCBBounty.ForeColor = System.Drawing.Color.White;
             this.styleCBBounty.FormattingEnabled = true;
-            this.styleCBBounty.Location = new System.Drawing.Point(232, 46);
+            this.styleCBBounty.Location = new System.Drawing.Point(232, 98);
             this.styleCBBounty.Name = "styleCBBounty";
             this.styleCBBounty.Size = new System.Drawing.Size(69, 23);
             this.styleCBBounty.TabIndex = 28;
@@ -91,7 +92,7 @@
             this.bountyPSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyPSTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyPSTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyPSTB.Location = new System.Drawing.Point(184, 48);
+            this.bountyPSTB.Location = new System.Drawing.Point(184, 100);
             this.bountyPSTB.Name = "bountyPSTB";
             this.bountyPSTB.ReadOnly = true;
             this.bountyPSTB.Size = new System.Drawing.Size(45, 20);
@@ -118,7 +119,7 @@
             this.fromDPSTimeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTimeTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTimeTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTimeTB.Location = new System.Drawing.Point(118, 26);
+            this.fromDPSTimeTB.Location = new System.Drawing.Point(118, 78);
             this.fromDPSTimeTB.Name = "fromDPSTimeTB";
             this.fromDPSTimeTB.ReadOnly = true;
             this.fromDPSTimeTB.Size = new System.Drawing.Size(64, 20);
@@ -132,7 +133,7 @@
             this.fromDPSTotalTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTotalTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTotalTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTotalTB.Location = new System.Drawing.Point(17, 26);
+            this.fromDPSTotalTB.Location = new System.Drawing.Point(17, 78);
             this.fromDPSTotalTB.Name = "fromDPSTotalTB";
             this.fromDPSTotalTB.ReadOnly = true;
             this.fromDPSTotalTB.Size = new System.Drawing.Size(99, 20);
@@ -189,7 +190,7 @@
             this.styleCBFrom.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.styleCBFrom.ForeColor = System.Drawing.Color.White;
             this.styleCBFrom.FormattingEnabled = true;
-            this.styleCBFrom.Location = new System.Drawing.Point(232, 24);
+            this.styleCBFrom.Location = new System.Drawing.Point(232, 76);
             this.styleCBFrom.Name = "styleCBFrom";
             this.styleCBFrom.Size = new System.Drawing.Size(69, 23);
             this.styleCBFrom.TabIndex = 20;
@@ -200,7 +201,7 @@
             this.fromDPSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTB.Location = new System.Drawing.Point(184, 26);
+            this.fromDPSTB.Location = new System.Drawing.Point(184, 78);
             this.fromDPSTB.Name = "fromDPSTB";
             this.fromDPSTB.ReadOnly = true;
             this.fromDPSTB.Size = new System.Drawing.Size(45, 20);
@@ -280,9 +281,22 @@
             this.verticalTagL.Name = "verticalTagL";
             this.verticalTagL.NewText = "????";
             this.verticalTagL.RotateAngle = -90;
-            this.verticalTagL.Size = new System.Drawing.Size(18, 72);
+            this.verticalTagL.Size = new System.Drawing.Size(18, 124);
             this.verticalTagL.TabIndex = 0;
             this.verticalTagL.Click += new System.EventHandler(this.OnTagClick);
+            // 
+            // toDPSWeaponTB
+            // 
+            this.toDPSWeaponTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.toDPSWeaponTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.toDPSWeaponTB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toDPSWeaponTB.ForeColor = System.Drawing.Color.Lime;
+            this.toDPSWeaponTB.Location = new System.Drawing.Point(17, 26);
+            this.toDPSWeaponTB.Multiline = true;
+            this.toDPSWeaponTB.Name = "toDPSWeaponTB";
+            this.toDPSWeaponTB.ReadOnly = true;
+            this.toDPSWeaponTB.Size = new System.Drawing.Size(284, 50);
+            this.toDPSWeaponTB.TabIndex = 34;
             // 
             // StatsControl
             // 
@@ -290,6 +304,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Controls.Add(this.toDPSWeaponTB);
             this.Controls.Add(this.horizontalTagL);
             this.Controls.Add(this.bountyTimeTB);
             this.Controls.Add(this.bountyTotalTB);
@@ -309,7 +324,7 @@
             this.Controls.Add(this.fromDPS2TB);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StatsControl";
-            this.Size = new System.Drawing.Size(323, 72);
+            this.Size = new System.Drawing.Size(323, 124);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +350,6 @@
         private System.Windows.Forms.Label horizontalTagL;
         private System.Windows.Forms.TextBox toDPSTime2TB;
         private System.Windows.Forms.TextBox fromDPS2TB;
+        private System.Windows.Forms.TextBox toDPSWeaponTB;
     }
 }
