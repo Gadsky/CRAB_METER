@@ -289,7 +289,7 @@
             // 
             this.toDPSWeaponTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.toDPSWeaponTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toDPSWeaponTB.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toDPSWeaponTB.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSWeaponTB.ForeColor = System.Drawing.Color.Lime;
             this.toDPSWeaponTB.Location = new System.Drawing.Point(17, 26);
             this.toDPSWeaponTB.Multiline = true;
@@ -297,6 +297,8 @@
             this.toDPSWeaponTB.ReadOnly = true;
             this.toDPSWeaponTB.Size = new System.Drawing.Size(284, 50);
             this.toDPSWeaponTB.TabIndex = 34;
+            this.toDPSWeaponTB.Text = "\'Augmented\' Valkyrie : 39 131 : 50,0\r\n\'Augmented\' Infiltrator : 38 934 : 49,8\r\nMj" +
+    "olnir Heavy Missile : 137 : 0,2";
             // 
             // StatsControl
             // 

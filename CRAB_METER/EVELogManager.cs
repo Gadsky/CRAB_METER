@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -131,11 +132,18 @@ public class EVECharacter {
 
     public enum IntervalType { _10sec, _60sec, _3600sec, _sinceUndock, _sinceUndockJump, _activeSinceUndock, _start }
 
+    public struct WeaponStatistics {
+        public string Weapon;
+        public double Total;
+        public double Percentage;
+    }
+
     public struct Statistics {
         public double IntervalLength;
         public int EventCount;
         public double Total;
         public double Avg;
+        public WeaponStatistics[] WeaponStatistics;
     }
 
     public EVECharacter(string name) {
@@ -343,12 +351,21 @@ public class EVECharacter {
         to = Max(from, to);
 
         Statistics statistics = new Statistics { EventCount = 0, Total = 0 };
+        Dictionary<string, double> wsd = new Dictionary<string, double>();
 
         for (int i = hitsTo.Count - 1; i >= 0; i--) {
             if (hitsTo[i].timestamp > to) continue;
             if (hitsTo[i].timestamp < from) break;
             statistics.Total += hitsTo[i].qty;
             statistics.EventCount++;
+
+            if (!wsd.ContainsKey(hitsTo[i].weapon)) wsd.Add(hitsTo[i].weapon, 0);
+            wsd[hitsTo[i].weapon] += hitsTo[i].qty;
+        }
+
+        if (statistics.Total > 0) {
+            var ws = wsd.Select(wse => new WeaponStatistics { Weapon = wse.Key, Total = wse.Value, Percentage = wse.Value / statistics.Total });
+            statistics.WeaponStatistics = ws.OrderBy(s => -s.Total).ToArray();
         }
 
         statistics.IntervalLength = Max(0, TimeSpan.FromTicks(to.Ticks - from.Ticks).TotalSeconds);

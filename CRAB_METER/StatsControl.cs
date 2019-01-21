@@ -1,4 +1,5 @@
 ﻿
+using System.Linq;
 using System.Windows.Forms;
 
 namespace ELO {
@@ -96,11 +97,23 @@ namespace ELO {
             toDPSTimeTB.Text = Seconds2String((int)statsTo.IntervalLength);
             toDPSTime2TB.Text = Seconds2String((int)statsTo.IntervalLength);
 
+            if (statsTo.WeaponStatistics != null) {
+                var toDPSWeapon = statsTo.WeaponStatistics.Select(wse => GetToWeaponLine(wse));
+                toDPSWeaponTB.Lines = toDPSWeapon.ToArray();
+            }
+            else {
+                toDPSWeaponTB.Text = "";
+            }
+
             bountyPSTB.Text = statsBounty.Avg.ToString("N1");
             bountyTotalTB.Text = statsBounty.Total.ToString("N0");
             bountyTimeTB.Text = Seconds2String((int)statsBounty.IntervalLength);
 
             verticalTagL.Refresh();
+        }
+
+        private static string GetToWeaponLine(EVECharacter.WeaponStatistics wse) {
+            return string.Format("{0, -24}  {1, 6:N0}  {2, 4:N1}", wse.Weapon, wse.Total, 100 * wse.Percentage);
         }
 
         string Seconds2String(int seconds) {
