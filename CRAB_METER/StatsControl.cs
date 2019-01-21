@@ -1,4 +1,5 @@
 ﻿
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -100,9 +101,11 @@ namespace ELO {
             if (statsTo.WeaponStatistics != null) {
                 var toDPSWeapon = statsTo.WeaponStatistics.Select(wse => GetToWeaponLine(wse));
                 toDPSWeaponTB.Lines = toDPSWeapon.ToArray();
+                toDPSWeaponTB.Visible = true;
             }
             else {
                 toDPSWeaponTB.Text = "";
+                toDPSWeaponTB.Visible = false;
             }
 
             bountyPSTB.Text = statsBounty.Avg.ToString("N1");
@@ -113,7 +116,7 @@ namespace ELO {
         }
 
         private static string GetToWeaponLine(EVECharacter.WeaponStatistics wse) {
-            return string.Format("{0, -24}  {1, 6:N0}  {2, 4:N1}", wse.Weapon, wse.Total, 100 * wse.Percentage);
+            return string.Format("{0, -23}  {1, 7:N0}  {2, 5:N1}", wse.Weapon, wse.Total, 100 * wse.Percentage);
         }
 
         string Seconds2String(int seconds) {
@@ -135,6 +138,24 @@ namespace ELO {
 
         private void OnResetActionClick(object sender, System.EventArgs e) {
             character.SimulateUndocking();
+        }
+
+        private void toDPSWeaponTB_TextChanged(object sender, System.EventArgs e) {
+            Size sz = new Size(toDPSWeaponTB.ClientSize.Width, int.MaxValue);
+            TextFormatFlags flags = TextFormatFlags.WordBreak;
+            int padding = 3;
+            int borders = toDPSWeaponTB.Height - toDPSWeaponTB.ClientSize.Height;
+            var text = (toDPSWeaponTB.Text == null || "".Equals(toDPSWeaponTB.Text)) ? "WWW" : toDPSWeaponTB.Text;
+            sz = TextRenderer.MeasureText(text, toDPSWeaponTB.Font, sz, flags);
+            int h = sz.Height + borders + padding;
+            if (toDPSWeaponTB.Top + h > this.ClientSize.Height - 10) {
+                h = this.ClientSize.Height - 10 - toDPSWeaponTB.Top;
+            }
+            toDPSWeaponTB.Height = h;
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e) {
+
         }
     }
 }

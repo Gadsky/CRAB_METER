@@ -43,6 +43,8 @@
             this.fromDPS2TB = new System.Windows.Forms.TextBox();
             this.verticalTagL = new ELO.VerticalLabel();
             this.toDPSWeaponTB = new System.Windows.Forms.TextBox();
+            this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bountyTimeTB
@@ -51,7 +53,8 @@
             this.bountyTimeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyTimeTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyTimeTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyTimeTB.Location = new System.Drawing.Point(118, 100);
+            this.bountyTimeTB.Location = new System.Drawing.Point(102, 66);
+            this.bountyTimeTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.bountyTimeTB.Name = "bountyTimeTB";
             this.bountyTimeTB.ReadOnly = true;
             this.bountyTimeTB.Size = new System.Drawing.Size(64, 20);
@@ -65,7 +68,8 @@
             this.bountyTotalTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyTotalTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyTotalTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyTotalTB.Location = new System.Drawing.Point(17, 100);
+            this.bountyTotalTB.Location = new System.Drawing.Point(1, 66);
+            this.bountyTotalTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.bountyTotalTB.Name = "bountyTotalTB";
             this.bountyTotalTB.ReadOnly = true;
             this.bountyTotalTB.Size = new System.Drawing.Size(99, 20);
@@ -81,7 +85,8 @@
             this.styleCBBounty.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.styleCBBounty.ForeColor = System.Drawing.Color.White;
             this.styleCBBounty.FormattingEnabled = true;
-            this.styleCBBounty.Location = new System.Drawing.Point(232, 98);
+            this.styleCBBounty.Location = new System.Drawing.Point(216, 64);
+            this.styleCBBounty.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.styleCBBounty.Name = "styleCBBounty";
             this.styleCBBounty.Size = new System.Drawing.Size(69, 23);
             this.styleCBBounty.TabIndex = 28;
@@ -92,7 +97,8 @@
             this.bountyPSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bountyPSTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.bountyPSTB.ForeColor = System.Drawing.Color.Gold;
-            this.bountyPSTB.Location = new System.Drawing.Point(184, 100);
+            this.bountyPSTB.Location = new System.Drawing.Point(168, 66);
+            this.bountyPSTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.bountyPSTB.Name = "bountyPSTB";
             this.bountyPSTB.ReadOnly = true;
             this.bountyPSTB.Size = new System.Drawing.Size(45, 20);
@@ -119,7 +125,8 @@
             this.fromDPSTimeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTimeTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTimeTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTimeTB.Location = new System.Drawing.Point(118, 78);
+            this.fromDPSTimeTB.Location = new System.Drawing.Point(102, 43);
+            this.fromDPSTimeTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.fromDPSTimeTB.Name = "fromDPSTimeTB";
             this.fromDPSTimeTB.ReadOnly = true;
             this.fromDPSTimeTB.Size = new System.Drawing.Size(64, 20);
@@ -133,7 +140,8 @@
             this.fromDPSTotalTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTotalTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTotalTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTotalTB.Location = new System.Drawing.Point(17, 78);
+            this.fromDPSTotalTB.Location = new System.Drawing.Point(1, 43);
+            this.fromDPSTotalTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.fromDPSTotalTB.Name = "fromDPSTotalTB";
             this.fromDPSTotalTB.ReadOnly = true;
             this.fromDPSTotalTB.Size = new System.Drawing.Size(99, 20);
@@ -147,7 +155,8 @@
             this.toDPSTimeTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toDPSTimeTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTimeTB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTimeTB.Location = new System.Drawing.Point(118, 4);
+            this.toDPSTimeTB.Location = new System.Drawing.Point(102, 2);
+            this.toDPSTimeTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 0);
             this.toDPSTimeTB.Name = "toDPSTimeTB";
             this.toDPSTimeTB.ReadOnly = true;
             this.toDPSTimeTB.Size = new System.Drawing.Size(64, 20);
@@ -161,7 +170,8 @@
             this.toDPSTotalTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toDPSTotalTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTotalTB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTotalTB.Location = new System.Drawing.Point(17, 4);
+            this.toDPSTotalTB.Location = new System.Drawing.Point(1, 2);
+            this.toDPSTotalTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 0);
             this.toDPSTotalTB.Name = "toDPSTotalTB";
             this.toDPSTotalTB.ReadOnly = true;
             this.toDPSTotalTB.Size = new System.Drawing.Size(99, 20);
@@ -177,7 +187,8 @@
             this.styleCBTo.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.styleCBTo.ForeColor = System.Drawing.Color.White;
             this.styleCBTo.FormattingEnabled = true;
-            this.styleCBTo.Location = new System.Drawing.Point(232, 2);
+            this.styleCBTo.Location = new System.Drawing.Point(216, 0);
+            this.styleCBTo.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.styleCBTo.Name = "styleCBTo";
             this.styleCBTo.Size = new System.Drawing.Size(69, 23);
             this.styleCBTo.TabIndex = 21;
@@ -190,7 +201,8 @@
             this.styleCBFrom.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.styleCBFrom.ForeColor = System.Drawing.Color.White;
             this.styleCBFrom.FormattingEnabled = true;
-            this.styleCBFrom.Location = new System.Drawing.Point(232, 76);
+            this.styleCBFrom.Location = new System.Drawing.Point(216, 41);
+            this.styleCBFrom.Margin = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.styleCBFrom.Name = "styleCBFrom";
             this.styleCBFrom.Size = new System.Drawing.Size(69, 23);
             this.styleCBFrom.TabIndex = 20;
@@ -201,7 +213,8 @@
             this.fromDPSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.fromDPSTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPSTB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPSTB.Location = new System.Drawing.Point(184, 78);
+            this.fromDPSTB.Location = new System.Drawing.Point(168, 43);
+            this.fromDPSTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.fromDPSTB.Name = "fromDPSTB";
             this.fromDPSTB.ReadOnly = true;
             this.fromDPSTB.Size = new System.Drawing.Size(45, 20);
@@ -215,7 +228,8 @@
             this.toDPSTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toDPSTB.Font = new System.Drawing.Font("Arial Narrow", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTB.Location = new System.Drawing.Point(184, 4);
+            this.toDPSTB.Location = new System.Drawing.Point(168, 2);
+            this.toDPSTB.Margin = new System.Windows.Forms.Padding(1, 2, 1, 0);
             this.toDPSTB.Name = "toDPSTB";
             this.toDPSTB.ReadOnly = true;
             this.toDPSTB.Size = new System.Drawing.Size(45, 20);
@@ -234,7 +248,7 @@
             this.horizontalTagL.AutoSize = true;
             this.horizontalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.horizontalTagL.ForeColor = System.Drawing.Color.White;
-            this.horizontalTagL.Location = new System.Drawing.Point(3, 3);
+            this.horizontalTagL.Location = new System.Drawing.Point(3, 2);
             this.horizontalTagL.Name = "horizontalTagL";
             this.horizontalTagL.Size = new System.Drawing.Size(28, 16);
             this.horizontalTagL.TabIndex = 31;
@@ -246,12 +260,12 @@
             // 
             this.toDPSTime2TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.toDPSTime2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.toDPSTime2TB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toDPSTime2TB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTime2TB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTime2TB.Location = new System.Drawing.Point(118, 3);
+            this.toDPSTime2TB.Location = new System.Drawing.Point(115, 3);
             this.toDPSTime2TB.Name = "toDPSTime2TB";
             this.toDPSTime2TB.ReadOnly = true;
-            this.toDPSTime2TB.Size = new System.Drawing.Size(64, 14);
+            this.toDPSTime2TB.Size = new System.Drawing.Size(64, 18);
             this.toDPSTime2TB.TabIndex = 32;
             this.toDPSTime2TB.Text = "?";
             this.toDPSTime2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -261,12 +275,12 @@
             // 
             this.fromDPS2TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.fromDPS2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.fromDPS2TB.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fromDPS2TB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fromDPS2TB.ForeColor = System.Drawing.Color.Red;
-            this.fromDPS2TB.Location = new System.Drawing.Point(184, 3);
+            this.fromDPS2TB.Location = new System.Drawing.Point(183, 3);
             this.fromDPS2TB.Name = "fromDPS2TB";
             this.fromDPS2TB.ReadOnly = true;
-            this.fromDPS2TB.Size = new System.Drawing.Size(45, 14);
+            this.fromDPS2TB.Size = new System.Drawing.Size(45, 18);
             this.fromDPS2TB.TabIndex = 33;
             this.fromDPS2TB.Text = "?";
             this.fromDPS2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -281,7 +295,7 @@
             this.verticalTagL.Name = "verticalTagL";
             this.verticalTagL.NewText = "????";
             this.verticalTagL.RotateAngle = -90;
-            this.verticalTagL.Size = new System.Drawing.Size(18, 124);
+            this.verticalTagL.Size = new System.Drawing.Size(18, 95);
             this.verticalTagL.TabIndex = 0;
             this.verticalTagL.Click += new System.EventHandler(this.OnTagClick);
             // 
@@ -289,16 +303,54 @@
             // 
             this.toDPSWeaponTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.toDPSWeaponTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mainPanel.SetColumnSpan(this.toDPSWeaponTB, 4);
             this.toDPSWeaponTB.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSWeaponTB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSWeaponTB.Location = new System.Drawing.Point(17, 26);
+            this.toDPSWeaponTB.Location = new System.Drawing.Point(1, 24);
+            this.toDPSWeaponTB.Margin = new System.Windows.Forms.Padding(1);
             this.toDPSWeaponTB.Multiline = true;
             this.toDPSWeaponTB.Name = "toDPSWeaponTB";
             this.toDPSWeaponTB.ReadOnly = true;
-            this.toDPSWeaponTB.Size = new System.Drawing.Size(284, 50);
+            this.toDPSWeaponTB.Size = new System.Drawing.Size(284, 16);
             this.toDPSWeaponTB.TabIndex = 34;
-            this.toDPSWeaponTB.Text = "\'Augmented\' Valkyrie : 39 131 : 50,0\r\n\'Augmented\' Infiltrator : 38 934 : 49,8\r\nMj" +
-    "olnir Heavy Missile : 137 : 0,2";
+            this.toDPSWeaponTB.Visible = false;
+            this.toDPSWeaponTB.WordWrap = false;
+            this.toDPSWeaponTB.TextChanged += new System.EventHandler(this.toDPSWeaponTB_TextChanged);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.AutoSize = true;
+            this.mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mainPanel.ColumnCount = 4;
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.mainPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.mainPanel.Controls.Add(this.toDPSTotalTB, 0, 0);
+            this.mainPanel.Controls.Add(this.toDPSWeaponTB, 0, 1);
+            this.mainPanel.Controls.Add(this.styleCBBounty, 3, 3);
+            this.mainPanel.Controls.Add(this.bountyTimeTB, 1, 3);
+            this.mainPanel.Controls.Add(this.bountyPSTB, 2, 3);
+            this.mainPanel.Controls.Add(this.toDPSTimeTB, 1, 0);
+            this.mainPanel.Controls.Add(this.bountyTotalTB, 0, 3);
+            this.mainPanel.Controls.Add(this.toDPSTB, 2, 0);
+            this.mainPanel.Controls.Add(this.styleCBTo, 3, 0);
+            this.mainPanel.Controls.Add(this.fromDPSTotalTB, 0, 2);
+            this.mainPanel.Controls.Add(this.fromDPSTimeTB, 1, 2);
+            this.mainPanel.Controls.Add(this.styleCBFrom, 3, 2);
+            this.mainPanel.Controls.Add(this.fromDPSTB, 2, 2);
+            this.mainPanel.Location = new System.Drawing.Point(15, 2);
+            this.mainPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 3);
+            this.mainPanel.RowCount = 4;
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.mainPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.mainPanel.Size = new System.Drawing.Size(286, 90);
+            this.mainPanel.TabIndex = 35;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // StatsControl
             // 
@@ -306,27 +358,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Controls.Add(this.toDPSWeaponTB);
             this.Controls.Add(this.horizontalTagL);
-            this.Controls.Add(this.bountyTimeTB);
-            this.Controls.Add(this.bountyTotalTB);
-            this.Controls.Add(this.styleCBBounty);
-            this.Controls.Add(this.bountyPSTB);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fromDPSTimeTB);
-            this.Controls.Add(this.fromDPSTotalTB);
-            this.Controls.Add(this.toDPSTimeTB);
-            this.Controls.Add(this.toDPSTotalTB);
-            this.Controls.Add(this.styleCBTo);
-            this.Controls.Add(this.styleCBFrom);
-            this.Controls.Add(this.fromDPSTB);
-            this.Controls.Add(this.toDPSTB);
             this.Controls.Add(this.verticalTagL);
             this.Controls.Add(this.toDPSTime2TB);
             this.Controls.Add(this.fromDPS2TB);
+            this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StatsControl";
-            this.Size = new System.Drawing.Size(323, 124);
+            this.Size = new System.Drawing.Size(324, 95);
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,5 +395,6 @@
         private System.Windows.Forms.TextBox toDPSTime2TB;
         private System.Windows.Forms.TextBox fromDPS2TB;
         private System.Windows.Forms.TextBox toDPSWeaponTB;
+        private System.Windows.Forms.TableLayoutPanel mainPanel;
     }
 }
