@@ -116,8 +116,13 @@ namespace ELO {
         }
 
         private static string GetToWeaponLine(EVECharacter.WeaponStatistics wse) {
-            return string.Format("{0, -23}  {1, 7:N0}  {2, 5:N1}", wse.Weapon, wse.Total, 100 * wse.Percentage);
+            return string.Format("{0, -30}  {1, 7:N0}  {2, 5:N1}", Trim(wse.Weapon, 30), wse.Total, 100 * wse.Percentage);
         }
+
+        private static string Trim(string value, int length) {
+            return value.Length > 30 ? value.Substring(0, 30) : value;
+        }
+
 
         string Seconds2String(int seconds) {
             int s = seconds % 60;

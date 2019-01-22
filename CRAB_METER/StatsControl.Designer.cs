@@ -304,7 +304,7 @@
             this.toDPSWeaponTB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.toDPSWeaponTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mainPanel.SetColumnSpan(this.toDPSWeaponTB, 4);
-            this.toDPSWeaponTB.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.toDPSWeaponTB.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSWeaponTB.ForeColor = System.Drawing.Color.Lime;
             this.toDPSWeaponTB.Location = new System.Drawing.Point(1, 24);
             this.toDPSWeaponTB.Margin = new System.Windows.Forms.Padding(1);
