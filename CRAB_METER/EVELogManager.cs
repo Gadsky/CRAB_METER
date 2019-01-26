@@ -14,10 +14,10 @@ public class EVELogManager {
 
     private FileSystemWatcher fileSystemWatcher;
     private SortedList<string, FileEntry> files = new SortedList<string, FileEntry>();
-    private SortedList<string, EVECharacter> characters = new SortedList<string, EVECharacter>();
-    public SortedList<string, EVECharacter> Characters { get { return characters; } }
+    public SortedList<string, EVECharacter> Characters { get; } = new SortedList<string, EVECharacter>();
 
-    private static Regex listener = new Regex("  Listener: (.*)");
+    private static Regex listener_en = new Regex("  Listener: (.*)");
+    private static Regex listener_ru = new Regex("  Слушатель: (.*)");
 
     private static string GetPersonalPath() { return Environment.GetFolderPath(Environment.SpecialFolder.Personal); }
     public static string GetBasePath() { return GetPersonalPath() + "\\EVE\\logs\\Gamelogs\\"; }
@@ -38,8 +38,14 @@ public class EVELogManager {
                 while ((line = streamReader.ReadLine()) != null) {
                     if (lineIndex > 2) return null;
 
-                    Match listenerMatch = listener.Match(line);
+                    Match listenerMatch = listener_en.Match(line);
                     if (listenerMatch.Success) return listenerMatch.Groups[1].Value;
+
+                    listenerMatch = listener_ru.Match(line);
+                    if (listenerMatch.Success) {
+                        EVECharacter.SwitchToRu();
+                        return listenerMatch.Groups[1].Value;
+                    }
 
                     lineIndex++;
                 }
@@ -69,12 +75,12 @@ public class EVELogManager {
     }
 
     private void ReadFile(FileEntry fileEntry) {
-        if (!characters.ContainsKey(fileEntry.Tag)) {
+        if (!Characters.ContainsKey(fileEntry.Tag)) {
             var character = new EVECharacter(fileEntry.Tag);
-            characters.Add(character.Name, character);
+            Characters.Add(character.Name, character);
         }
 
-        var characterToProcess = characters[fileEntry.Tag];
+        var characterToProcess = Characters[fileEntry.Tag];
 
         using (var file = File.Open(fileEntry.Path, FileMode.Open, FileAccess.Read, FileShare.Read)) {
             file.Seek(fileEntry.Offset, SeekOrigin.Begin);
@@ -123,12 +129,29 @@ public class EVECharacter {
     private List<HitTo> hitsTo = new List<HitTo>();
     private List<Bounty> bounties = new List<Bounty>();
 
-    private static Regex from = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>from<.*> <b><.*>(.*)</b><.*> - (.*)");
-    private static Regex to = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>to<.*> - (.*) - (.*)");
-    private static Regex undocking = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Undocking .*");
-    private static Regex jumping = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Jumping .*");
-    private static Regex bounty = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+) ISK(.*)");
-    private static Regex start = new Regex("  Session Started: (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*)");
+    private static Regex from_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>from<.*> <b><.*>(.*)</b><.*> - (.*)");
+    private static Regex from_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>из<.*> <b><.*>(.*)</b><.*> - (.*)");
+    private static Regex from = from_en;
+
+    private static Regex to_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>to<.*> - (.*) - (.*)");
+    private static Regex to_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>на<.*> - <.*\">(.*)</localized> - (.*)");
+    private static Regex to = to_en;
+
+    private static Regex undocking_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Undocking .*");
+    private static Regex undocking_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Выход из дока .*");
+    private static Regex undocking = undocking_en;
+
+    private static Regex jumping_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Jumping .*");
+    private static Regex jumping_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Осуществляется прыжок из .*");
+    private static Regex jumping = jumping_en;
+
+    private static Regex bounty_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+) ISK(.*)");
+    private static Regex bounty_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+) ISK(.*)");
+    private static Regex bounty = bounty_en;
+
+    private static Regex start_en = new Regex("  Session Started: (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*)");
+    private static Regex start_ru = new Regex("  Сеанс начат: (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*)");
+    private static Regex start = start_en;
 
     public enum IntervalType { _10sec, _60sec, _3600sec, _sinceUndock, _sinceUndockJump, _activeSinceUndock, _start }
 
@@ -148,6 +171,15 @@ public class EVECharacter {
 
     public EVECharacter(string name) {
         Name = name;
+    }
+
+    public static void SwitchToRu() {
+        from = from_ru;
+        to = to_ru;
+        undocking = undocking_ru;
+        jumping = jumping_ru;
+        bounty = bounty_ru;
+        start = start_ru;
     }
 
     public static T Min<T>(T first, T second) {

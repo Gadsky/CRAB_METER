@@ -1,1 +1,19 @@
-+ weapon types
+EVE Online Log observer
+
+Shows ingame action statistics:
+* Green fields - dealed damage (total, duration, DPS)
+* Red fields - received damage (total, duration, DPS)
+* Yellow fields - earned bounty (total, duration, 1kk ISK/hour)
+
+Calculation strategy can be changed via appropriate combobox:
+* 10 sec - last 10 seconds
+* 60 sec - last 60 seconds
+* 1 hr - last hour
+* Undock - actions from last undock
+* Undock/Jump - actions from last undock or jump
+* Action - actions from first hit to last hit (but undock or jump resets statistics)
+* Whole - actions from starting game
+
+Now supported two languages:
+* English logs 
+* Russian logs
