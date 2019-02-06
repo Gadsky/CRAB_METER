@@ -41,9 +41,9 @@
             this.horizontalTagL = new System.Windows.Forms.Label();
             this.toDPSTime2TB = new System.Windows.Forms.TextBox();
             this.fromDPS2TB = new System.Windows.Forms.TextBox();
-            this.verticalTagL = new ELO.VerticalLabel();
             this.toDPSWeaponTB = new System.Windows.Forms.TextBox();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.verticalTagL = new ELO.VerticalLabel();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,7 +262,7 @@
             this.toDPSTime2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toDPSTime2TB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTime2TB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTime2TB.Location = new System.Drawing.Point(115, 3);
+            this.toDPSTime2TB.Location = new System.Drawing.Point(117, 3);
             this.toDPSTime2TB.Name = "toDPSTime2TB";
             this.toDPSTime2TB.ReadOnly = true;
             this.toDPSTime2TB.Size = new System.Drawing.Size(64, 18);
@@ -285,19 +285,6 @@
             this.fromDPS2TB.Text = "?";
             this.fromDPS2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.fromDPS2TB.Visible = false;
-            // 
-            // verticalTagL
-            // 
-            this.verticalTagL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.verticalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.verticalTagL.ForeColor = System.Drawing.Color.White;
-            this.verticalTagL.Location = new System.Drawing.Point(0, 0);
-            this.verticalTagL.Name = "verticalTagL";
-            this.verticalTagL.NewText = "????";
-            this.verticalTagL.RotateAngle = -90;
-            this.verticalTagL.Size = new System.Drawing.Size(18, 95);
-            this.verticalTagL.TabIndex = 0;
-            this.verticalTagL.Click += new System.EventHandler(this.OnTagClick);
             // 
             // toDPSWeaponTB
             // 
@@ -352,12 +339,26 @@
             this.mainPanel.TabIndex = 35;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
+            // verticalTagL
+            // 
+            this.verticalTagL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.verticalTagL.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.verticalTagL.ForeColor = System.Drawing.Color.White;
+            this.verticalTagL.Location = new System.Drawing.Point(0, 0);
+            this.verticalTagL.Name = "verticalTagL";
+            this.verticalTagL.NewText = "????";
+            this.verticalTagL.RotateAngle = -90;
+            this.verticalTagL.Size = new System.Drawing.Size(18, 93);
+            this.verticalTagL.TabIndex = 0;
+            this.verticalTagL.Click += new System.EventHandler(this.OnTagClick);
+            // 
             // StatsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.horizontalTagL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verticalTagL);
@@ -366,7 +367,8 @@
             this.Controls.Add(this.mainPanel);
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "StatsControl";
-            this.Size = new System.Drawing.Size(324, 95);
+            this.Size = new System.Drawing.Size(323, 93);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.StatsControl_Paint);
             this.mainPanel.ResumeLayout(false);
             this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
