@@ -73,10 +73,11 @@
             // 
             this.statsControl3.AutoSize = true;
             this.statsControl3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.statsControl3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.statsControl3.Location = new System.Drawing.Point(0, 0);
             this.statsControl3.Margin = new System.Windows.Forms.Padding(0);
             this.statsControl3.Name = "statsControl3";
-            this.statsControl3.Size = new System.Drawing.Size(323, 72);
+            this.statsControl3.Size = new System.Drawing.Size(325, 76);
             this.statsControl3.TabIndex = 2;
             // 
             // MainForm

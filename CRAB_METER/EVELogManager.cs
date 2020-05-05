@@ -133,7 +133,7 @@ public class EVECharacter {
     private static Regex from_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>из<.*> <b><.*>(.*)</b><.*> - (.*)");
     private static Regex from = from_en;
 
-    private static Regex to_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>to<.*> - (.*) - (.*)");
+    private static Regex to_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>to<.*> - (.*?) - (.*)");
     private static Regex to_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(combat\\) <.*><b>(\\d*)</b> <.*>на<.*> - <.*\">(.*)</localized> - (.*)");
     private static Regex to = to_en;
 

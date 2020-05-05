@@ -43,6 +43,7 @@
             this.fromDPS2TB = new System.Windows.Forms.TextBox();
             this.toDPSWeaponTB = new System.Windows.Forms.TextBox();
             this.mainPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.bountyTotal2TB = new System.Windows.Forms.TextBox();
             this.verticalTagL = new ELO.VerticalLabel();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +77,7 @@
             this.bountyTotalTB.TabIndex = 29;
             this.bountyTotalTB.Text = "?";
             this.bountyTotalTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bountyTotalTB.TextChanged += new System.EventHandler(this.bountyTotalTB_TextChanged);
             // 
             // styleCBBounty
             // 
@@ -262,10 +264,10 @@
             this.toDPSTime2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.toDPSTime2TB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.toDPSTime2TB.ForeColor = System.Drawing.Color.Lime;
-            this.toDPSTime2TB.Location = new System.Drawing.Point(117, 3);
+            this.toDPSTime2TB.Location = new System.Drawing.Point(131, 3);
             this.toDPSTime2TB.Name = "toDPSTime2TB";
             this.toDPSTime2TB.ReadOnly = true;
-            this.toDPSTime2TB.Size = new System.Drawing.Size(64, 18);
+            this.toDPSTime2TB.Size = new System.Drawing.Size(48, 18);
             this.toDPSTime2TB.TabIndex = 32;
             this.toDPSTime2TB.Text = "?";
             this.toDPSTime2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -339,6 +341,21 @@
             this.mainPanel.TabIndex = 35;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
+            // bountyTotal2TB
+            // 
+            this.bountyTotal2TB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.bountyTotal2TB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.bountyTotal2TB.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bountyTotal2TB.ForeColor = System.Drawing.Color.Yellow;
+            this.bountyTotal2TB.Location = new System.Drawing.Point(73, 3);
+            this.bountyTotal2TB.Name = "bountyTotal2TB";
+            this.bountyTotal2TB.ReadOnly = true;
+            this.bountyTotal2TB.Size = new System.Drawing.Size(54, 18);
+            this.bountyTotal2TB.TabIndex = 36;
+            this.bountyTotal2TB.Text = "?";
+            this.bountyTotal2TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.bountyTotal2TB.Visible = false;
+            // 
             // verticalTagL
             // 
             this.verticalTagL.Dock = System.Windows.Forms.DockStyle.Left;
@@ -359,6 +376,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.bountyTotal2TB);
             this.Controls.Add(this.horizontalTagL);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.verticalTagL);
@@ -398,5 +416,6 @@
         private System.Windows.Forms.TextBox fromDPS2TB;
         private System.Windows.Forms.TextBox toDPSWeaponTB;
         private System.Windows.Forms.TableLayoutPanel mainPanel;
+        private System.Windows.Forms.TextBox bountyTotal2TB;
     }
 }

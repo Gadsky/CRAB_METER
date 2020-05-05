@@ -110,13 +110,18 @@ namespace ELO {
 
             bountyPSTB.Text = statsBounty.Avg.ToString("N1");
             bountyTotalTB.Text = statsBounty.Total.ToString("N0");
+            bountyTotal2TB.Text = (statsBounty.Total / 1000000).ToString("N1");
             bountyTimeTB.Text = Seconds2String((int)statsBounty.IntervalLength);
 
             verticalTagL.Refresh();
         }
 
         private static string GetToWeaponLine(EVECharacter.WeaponStatistics wse) {
-            return string.Format("{0, -30}  {1, 7:N0}  {2, 5:N1}", Trim(wse.Weapon, 30), wse.Total, 100 * wse.Percentage);
+            if (0.999 <= wse.Percentage && wse.Percentage <= 1.001) { 
+                return string.Format("{0, -29}  {1, 7:N0}  {2, 4:N0}", Trim(wse.Weapon, 29), wse.Total, 100 * wse.Percentage);
+            }
+
+            return string.Format("{0, -29}  {1, 7:N0}  {2, 4:N0}", Trim(wse.Weapon, 29), wse.Total, 100 * wse.Percentage);
         }
 
         private static string Trim(string value, int length) {
@@ -164,6 +169,10 @@ namespace ELO {
         }
 
         private void StatsControl_Paint(object sender, PaintEventArgs e) {
+        }
+
+        private void bountyTotalTB_TextChanged(object sender, System.EventArgs e) {
+
         }
     }
 }
