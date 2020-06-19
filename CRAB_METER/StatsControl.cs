@@ -118,10 +118,10 @@ namespace ELO {
 
         private static string GetToWeaponLine(EVECharacter.WeaponStatistics wse) {
             if (0.999 <= wse.Percentage && wse.Percentage <= 1.001) { 
-                return string.Format("{0, -29}  {1, 7:N0}  {2, 4:N0}", Trim(wse.Weapon, 29), wse.Total, 100 * wse.Percentage);
+                return string.Format("{0, -31}  {1, 7:N0}  {2, 4:N0}", Trim(wse.Weapon, 30), wse.Total, 100 * wse.Percentage);
             }
 
-            return string.Format("{0, -29}  {1, 7:N0}  {2, 4:N0}", Trim(wse.Weapon, 29), wse.Total, 100 * wse.Percentage);
+            return string.Format("{0, -31}  {1, 7:N0}  {2, 4:N1}", Trim(wse.Weapon, 30), wse.Total, 100 * wse.Percentage);
         }
 
         private static string Trim(string value, int length) {
