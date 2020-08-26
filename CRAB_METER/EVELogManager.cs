@@ -145,8 +145,8 @@ public class EVECharacter {
     private static Regex jumping_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(None\\) Осуществляется прыжок из .*");
     private static Regex jumping = jumping_en;
 
-    private static Regex bounty_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+) ISK(.*)");
-    private static Regex bounty_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+) ISK(.*)");
+    private static Regex bounty_en = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+)(.*) ISK(.*)");
+    private static Regex bounty_ru = new Regex("\\[ (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*) ] \\(bounty\\) (.*)>([ 0-9]+)(.*) ISK(.*)");
     private static Regex bounty = bounty_en;
 
     private static Regex start_en = new Regex("  Session Started: (\\d*\\.\\d*.\\d* \\d*:\\d*:\\d*)");
