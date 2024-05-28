@@ -9,10 +9,10 @@ Calculation strategy can be changed via appropriate combobox:
 * 10 sec - last 10 seconds
 * 60 sec - last 60 seconds
 * 1 hr - last hour
-* Undock - actions from last undock
-* Undock/Jump - actions from last undock or jump
-* Action - actions from first hit to last hit (but undock or jump resets statistics)
-* Whole - actions from starting game
+* Undock - actions since last undock
+* Undock/Jump - actions since last undock or jump
+* Action - actions since first hit to last hit (but undock or jump resets statistics)
+* Whole - actions since starting game
 
 Now supported two languages:
 * English logs 
